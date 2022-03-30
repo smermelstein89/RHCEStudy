@@ -8,7 +8,7 @@ def question(num, question, answer, hint):
     step = input("Step {}: {} {}:".format(num,question,hint_text))
     while step != str(answer):
         if ( step == 'h'):
-            print("Hint: {}", hint)
+            print("Hint: {}".format(hint))
             step = input("Step {}: {}:".format(num,hint))
        #elif (step == str(answer)):
 #            print("Correct!")
@@ -99,13 +99,19 @@ question(1,"Enter the character to press at grub", 'e', 'the letter e')
 # [(200, 'Jane'), (300, 'John')]
 
 end = time.time()
+totalTime = end - start
+score = 0
+if totalTime > 100:
+    score = 0
+else:
+    score = round(100 - totalTime,2)
 
-print("Your score for 'Reset Root PW' is: ", round(end-start, 10))
+print("Your score for 'Reset Root PW' is: ", score)
 
 # import pickle
 # #hiscores = [(end, "Scott")]
 # hiscores = []
-# score = end
+# # score = end
 # player = "Scott"
 # hiscores.append((score, player))
 # print(hiscores)
