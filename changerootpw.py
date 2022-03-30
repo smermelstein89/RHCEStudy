@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import time
+import os
 start = time.time()
 
 def question(num, question, answer, hint):
@@ -8,21 +9,22 @@ def question(num, question, answer, hint):
     while step != str(answer):
         if ( step == 'h'):
             print("Hint: {}", hint)
-            step = input("Step {}: {}:".format(num,question))
-        elif (step == str(answer)):
-            print("Correct!")
+            step = input("Step {}: {}:".format(num,hint))
+       #elif (step == str(answer)):
+#            print("Correct!")
         else:
             print("Fail")
             step = input("Step {}: {}:".format(num,question))
+    print("Correct!")
 
 
 question(1,"Enter the character to press at grub", 'e', 'the letter e')
-question(2,"What should be entered at the end of the 'linux16' line?", "rd.break", "'rd'")
-question(3,"What is the command to remount the root file system as read/write?", "mount -o remount,rw /sysroot", "'mount -o remount'")
-question(4,"Switch into a chroot jail?", "chroot /sysroot", "'sysroot")
-question(5,"What is the step after chroot /sysroot?", "passwd", "'change the root password.'")
-question(6,"Address all unlabeled files.", "touch /.autorelabel", "'touch ?autorelabel'")
-question(7,"How do you get out and reboot back to the main system?", "exit", "'exit'")
+# question(2,"What should be entered at the end of the 'linux16' line?", "rd.break", "'rd'")
+# question(3,"What is the command to remount the root file system as read/write?", "mount -o remount,rw /sysroot", "'mount -o remount'")
+# question(4,"Switch into a chroot jail?", "chroot /sysroot", "'sysroot")
+# question(5,"What is the step after chroot /sysroot?", "passwd", "'change the root password.'")
+# question(6,"Address all unlabeled files.", "touch /.autorelabel", "'touch ?autorelabel'")
+# question(7,"How do you get out and reboot back to the main system?", "exit", "'exit'")
 
 
 # #Changing Root PW
@@ -73,6 +75,52 @@ question(7,"How do you get out and reboot back to the main system?", "exit", "'e
 # #touch /.autorelabel
 # #Exit; exit
 
+# >>> hiscores = [(300, "John")]
+# >>> score = 200
+# >>> player = "Jane"
+# >>> hiscores.append((score, player))
+# >>> print hiscores
+# [(300, 'John'), (200, 'Jane')]
+# >>> hiscores.sort()
+# >>> print hiscores
+# [(200, 'Jane'), (300, 'John')]
+
+
+# >>> import pickle
+
+# >>> scores = open("scores", "w")
+# >>> pickle.dump(hiscores[-10:], scores)
+# >>> scores.close()
+
+# >>> scores = open("scores", "r")
+# >>> oldscores = pickle.load(scores)
+# >>> scores.close()
+# >>> print oldscores
+# [(200, 'Jane'), (300, 'John')]
+
 end = time.time()
+
 print("Your score for 'Reset Root PW' is: ", round(end-start, 10))
+
+# import pickle
+# #hiscores = [(end, "Scott")]
+# hiscores = []
+# score = end
+# player = "Scott"
+# hiscores.append((score, player))
+# print(hiscores)
+# #[(300, 'John'), (200, 'Jane')]
+# #hiscores.sort()
+# #print hiscores
+# #[(200, 'Jane'), (300, 'John')]
+
+# scores = open("scores", "w")
+# pickle.dump(hiscores[-10:], scores)
+# scores.close()
+
+# scores = open("scores", "r")
+# oldscores = pickle.load(scores)
+# scores.close()
+# print(oldscores)
+# # [(200, 'Jane'), (300, 'John')]
 
